@@ -151,7 +151,12 @@ Steps:
     }
   ]
 ```
-4. In the item in the list with the "type" value of "MPA_BID_03", the "text field should contain some information that shows the buyer's shipping address, for example: "SHIPPING_BID\",\"firstName\":\"abcdefg\",\"lastName\":\"hijklmn\",\"addressLine1\":\"111111\" ... . The seller can confirm that the details are the correct ones, so they know they have the correct buyer.
+
+4. In the item in the list with the "type" value of "MPA_BID_03", the "text field should contain some information that shows the buyer's shipping address, for example: 
+```
+"SHIPPING_BID\",\"firstName\":\"abcdefg\",\"lastName\":\"hijklmn\",\"addressLine1\":\"111111\" ... . 
+```
+The seller can confirm that the details are the correct ones, so they know they have the correct buyer.
 
 Additionally, if the same buyer has bought something else as well, an added check is that there should be no object in the list that has the type of "MPA_RELEASE"
 
@@ -162,5 +167,13 @@ Additionally, if the same buyer has bought something else as well, an added chec
 
 6. In each of those statuses, there is the "msgid" field: copy the value from each status out. For example, using the previous status, the values we're looking at would be 0000000061485d412eed43e5be79ae08e1bb2f2685ca815d4284083a and 0000000061485d7bcf5bd6ac952eef1161254f76d32454a62928921a
 
-7. Now to resend each of those messages: starting with the msgid value from the MPA_COMPLETE status, input the following into the market console window for each of the 2 values (wait a couple seconds before sending the 2nd message): smsg resend <msgid> 1 replacing <msgid> with the actual msgid value. For example: smsg resend 0000000061485d412eed43e5be79ae08e1bb2f2685ca815d4284083a 1 followed by smsg resend 0000000061485d7bcf5bd6ac952eef1161254f76d32454a62928921a 1 after a few seconds.
+7. Now to resend each of those messages: starting with the msgid value from the MPA_COMPLETE status, input the following into the market console window for each of the 2 values (wait a couple seconds before sending the 2nd message): `smsg resend <msgid> 1` replacing <msgid> with the actual msgid value. For example: 
+```
+smsg resend 0000000061485d412eed43e5be79ae08e1bb2f2685ca815d4284083a 1 
+```
+followed by 
+```
+smsg resend 0000000061485d7bcf5bd6ac952eef1161254f76d32454a62928921a 1 
+```
+after a few seconds.
   
